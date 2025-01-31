@@ -1,10 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<?xaml-comp compile="true" ?>
+﻿<?xaml-comp compile="true" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!--Content Page Style--!>
     <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
         <Setter Property="NavigationPage.HasNavigationBar" Value="False"></Setter>
         <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}"></Setter>
@@ -20,7 +18,6 @@
         <Setter Property="BackgroundColor" Value="Transparent"></Setter>        
     </Style>
     
-     <!--Button Style--!>
     <Style TargetType="Button" x:Key="NumberButtonStyle">
         <Setter Property="FontSize" Value="22"></Setter>
         <Setter Property="FontFamily" Value="RegularFont"></Setter>
@@ -73,8 +70,7 @@
         </Setter>
         <Setter Property="FontAutoScalingEnabled" Value="False"></Setter>
     </Style>
-    
-    <!-- Label Style--!>
+   
         <Style TargetType="Label" x:Key="EqualsLabelStyle">
             <Setter Property="FontSize" Value="28"></Setter>
             <Setter Property="TextColor" Value="#efbb31"></Setter>
