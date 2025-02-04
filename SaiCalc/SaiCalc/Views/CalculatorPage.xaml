@@ -84,5 +84,127 @@
             Margin="6,10,6,4"
             Style="{StaticResource ScientificOperatorButtonStyle}"
             Text="STD"/>
+        <Button                    
+            Grid.Row="2"
+            Grid.Column="3"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="VAR"/>
+        <Button                    
+            Grid.Row="2"
+            Grid.Column="4"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="FACT"/>
+        <!--Row 2-->
+        <Button                    
+            Grid.Row="3"
+            Grid.Column="0"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="SIN"/>
+        <Button                    
+            Grid.Row="3"
+            Grid.Column="1"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="COS"/>
+        <Button                    
+            Grid.Row="3"
+            Grid.Column="2"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="TAN"/>
+        <Button                    
+            Grid.Row="3"
+            Grid.Column="3"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="LOG"/>
+        <Button                    
+            Grid.Row="3"
+            Grid.Column="4"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="EXP"/>
+        <!--Row 3-->
+        <Button                    
+            Grid.Row="4"
+            Grid.Column="0"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="ASIN"/>
+        <Button                    
+            Grid.Row="4"
+            Grid.Column="1"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="ACOS"/>
+        <Button                    
+            Grid.Row="4"
+            Grid.Column="2"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="ATAN"/>
+        <Button                    
+            Grid.Row="4"
+            Grid.Column="3"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="LOG10"/>
+        <Button                    
+            Grid.Row="4"
+            Grid.Column="4"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="POW"/>
+        <!--Row 4-->
+        <Button                    
+            Grid.Row="5"
+            Grid.Column="0"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="SQRT"/>
+        <Button                    
+            Grid.Row="5"
+            Grid.Column="1"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="ABS"/>
+        <Button                    
+            Grid.Row="5"
+            Grid.Column="2"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text=","/>
+        <Button                    
+            Grid.Row="5"
+            Grid.Column="3"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text="("/>
+        <Button                    
+            Grid.Row="5"
+            Grid.Column="4"
+            ZIndex="1"
+            Margin="6,10,6,4"
+            Style="{StaticResource ScientificOperatorButtonStyle}"
+            Text=")"/>
     </Grid>
 </ContentPage>
