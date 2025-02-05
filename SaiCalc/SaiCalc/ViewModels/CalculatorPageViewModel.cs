@@ -16,7 +16,7 @@ namespace ViewModels
 
         [RelayCommand]
         private void Reset()
-        {            
+        {
             CalculatedResult = "0";
             InputText = string.Empty;
             isSciOpWaiting = false;
@@ -30,21 +30,23 @@ namespace ViewModels
                 return;
             }
 
-            if(isSciOpWaiting)
+            if (isSciOpWaiting)
             {
                 InputText += ")";
                 isSciOpWaiting = false;
             }
 
-            try {
+            try
+            {
                 var inputString = NormalizeInputString();
                 var expression = new NCalc.Expression(inputString);
                 var result = expression.Evaluate();
 
-                calculatedResult = result.ToString();
+                CalculatedResult = result.ToString();
             }
             catch (Exception ex)
             {
+
                 throw;
             }
         }
@@ -54,28 +56,29 @@ namespace ViewModels
             Dictionary<string, string> _opMapper = new()
             {
                 {"×", "*"},
-                {"÷", "/"},                
+                {"÷", "/"},
                 {"SIN", "Sin"},
                 {"COS", "Cos"},
-                {"TAN", "Tan"},                
+                {"TAN", "Tan"},
                 {"ASIN", "Asin"},
                 {"ACOS", "Acos"},
                 {"ATAN", "Atan"},
                 {"LOG", "Log"},
                 {"EXP", "Exp"},
                 {"LOG10", "Log10"},
-                {"POW", "Pow"},               
+                {"POW", "Pow"},
                 {"SQRT", "Sqrt"},
                 {"ABS", "Abs"},
-                
             };
-            
-            var retstring = InputText;
+
+            var retString = InputText;
+
             foreach (var key in _opMapper.Keys)
             {
-                retstring = retstring.Replace(key, _opMapper[key]);
+                retString = retString.Replace(key, _opMapper[key]);
             }
-            return retstring;
+
+            return retString;
         }
 
         [RelayCommand]
@@ -101,7 +104,6 @@ namespace ViewModels
                 InputText += ")";
                 isSciOpWaiting = false;
             }
-
             InputText += $" {op} ";
         }
 
@@ -113,7 +115,7 @@ namespace ViewModels
                 InputText += ")";
                 isSciOpWaiting = false;
             }
-            inputText += $" {op} ";
+            InputText += $" {op} ";
         }
 
         [RelayCommand]
