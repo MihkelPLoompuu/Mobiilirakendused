@@ -270,7 +270,7 @@
              Grid.Row="6"
              Grid.Column="3"
              ZIndex="1"
-             Margin="0,0,-105,0"
+             Margin="1,1,-105,0"
              Style="{StaticResource OperatorButtonStyle}"
              Text="AC"
              Command="{Binding ResetCommand }"

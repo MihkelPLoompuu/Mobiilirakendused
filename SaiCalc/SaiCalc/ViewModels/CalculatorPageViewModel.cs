@@ -54,19 +54,18 @@ namespace ViewModels
             Dictionary<string, string> _opMapper = new()
             {
                 {"×", "*"},
-                {"÷", "/"},
-                {"SQRT", "Sqrt"},
+                {"÷", "/"},                
                 {"SIN", "Sin"},
                 {"COS", "Cos"},
-                {"TAN", "Tan"},
-                {"LOG", "Log"},
+                {"TAN", "Tan"},                
                 {"ASIN", "Asin"},
                 {"ACOS", "Acos"},
                 {"ATAN", "Atan"},
+                {"LOG", "Log"},
                 {"EXP", "Exp"},
                 {"LOG10", "Log10"},
-                {"POW", "Pow"},
-                {"TAN", "tan"},
+                {"POW", "Pow"},               
+                {"SQRT", "Sqrt"},
                 {"ABS", "Abs"},
                 
             };
