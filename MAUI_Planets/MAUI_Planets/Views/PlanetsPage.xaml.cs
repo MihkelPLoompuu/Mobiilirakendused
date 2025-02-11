@@ -1,3 +1,6 @@
+using Models;
+using Services;
+
 namespace Views;
 
 public partial class PlanetsPage : ContentPage
@@ -11,5 +14,13 @@ public partial class PlanetsPage : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+
+		lstPopularPlanets.ItemsSource = PlanetsService.GetFeaturedPlanets();
+		lstAllPlanets.ItemsSource = PlanetsService.GetAllPlanets();
     }
+
+	async void Planets_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
+	{
+		await Navigation.PushAsync(new PlanetsDetailsPage(e.CurrentSelection.First() as Planet));
+	}
 }
