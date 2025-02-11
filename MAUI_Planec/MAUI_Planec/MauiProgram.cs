@@ -11,9 +11,9 @@ namespace MAUI_Planec
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("Monstserrat-Medium.ttf", "RegularFont");
-                    fonts.AddFont("Monstserrat-SemiBold.ttf", "MediumFont");
-                    fonts.AddFont("Monstserrat-Bold.ttf", "BoldFont");
+                    fonts.AddFont("Montserrat-Medium.ttf", "RegularFont");
+                    fonts.AddFont("Montserrat-SemiBold.ttf", "MediumFont");
+                    fonts.AddFont("Montserrat-Bold.ttf", "BoldFont");
                 });
 
 #if DEBUG
