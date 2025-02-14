@@ -5,7 +5,7 @@
              x:Class="Views.PlanetsPage"
              Title="PlanetsPage">
     <Grid IgnoreSafeArea="{OnPlatform Android=False, iOS=True}">
-        
+
         <!--Menu Grid-->
         <Grid
             x:Name="MenuContainer"
@@ -30,43 +30,43 @@
                 <Label 
                     Text="MENU"
                     Style="{StaticResource PageHeaderStyle}"
-                    HorizontalOptions="End"/> 
-                
+                    HorizontalOptions="End"/>
+
                 <Label 
                     Text="Option 1(with icon)"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
-                
-                
+
+
                 <Label 
                     Text="Option 2(with icon)"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
-                
+
                 <Label 
                     Text="Option 3(with icon)"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
-                
+
                 <Label 
                     Text="Option 4(with icon)"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
-                
+
                 <Label 
                     Text="Option 5(with icon)"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
-                
+
                 <Label 
                     Text="Option 6(with icon)"
                     Style="{StaticResource PageHeaderStyle}"
                     HorizontalOptions="End"/>
 
             </VerticalStackLayout>
-            
+
         </Grid>
-        
+
         <!--Main Content-->
         <Grid
             x:Name="MainContentGrid"
@@ -75,7 +75,7 @@
             BackgroundColor="{StaticResource PageBackgroundColor}"
             ColumnDefinitions="*, Auto"
             RowDefinitions="Auto,*">
-            
+
             <!--Header Text-->
             <VerticalStackLayout
                 Spacing="4"
@@ -90,9 +90,9 @@
                 <Label
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     Text="The milky way galaxy"/>
-                
+
             </VerticalStackLayout>
-                
+
             <!--Profile pic-->
             <Border
                 WidthRequest="56"
@@ -123,9 +123,9 @@
                             RadiusX="25"
                             RadiusY="25"/>
                     </Image.Clip>
-                    
+
                 </Image>
-                
+
             </Border>
             <!--Main Content ScrollView-->
             <ScrollView
@@ -233,14 +233,82 @@
                                             Style="{StaticResource FeaturedPlanetHeaderSubtitleStyle}"
                                             Text="{Binding Subtitle}"/>
                                     </Grid>
-                                    
+
+                                </Border>
+
+                            </DataTemplate>
+
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                    
+                    <!--More Section-->
+                    <Label
+                        Style="{StaticResource PageSubHeaderStyle}"
+                        Margin="0,12,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="you may also like   "/>
+                                <Span Text="→" FontSize="20"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <CollectionView
+                        x:Name="lstAllPlanets"
+                        HeightRequest="160"
+                        SelectionMode="Single"
+                        SelectionChanged="Planets_SelectionChanged">
+
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout
+                                Orientation="Horizontal"
+                                ItemSpacing="16"/>
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate
+                                x:DataType="models:Planet">
+                                <Border
+                                    VerticalOptions="Fill"
+                                    WidthRequest="140"
+                                    StrokeThickness="0"
+                                    Background="{Binding Background}"
+                                    Padding="16">
+
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="16"/>
+                                    </Border.StrokeShape>
+
+                                    <Grid
+                                        RowDefinitions="*,Auto,Auto"
+                                        RowSpacing="4">
+
+                                        <Image
+                                            Grid.Row="0"
+                                            Source="{Binding HeroImage}"
+                                            Rotation="-30"
+                                            Aspect="AspectFit"
+                                            VerticalOptions="Fill"
+                                            HorizontalOptions="Fill"/>
+
+                                        <Label
+                                            Grid.Row="1"
+                                            Style="{StaticResource AllPlanetHeaderSubtitleStyle}"
+                                            Text="{Binding Name}"
+                                            Margin="0,4,0,0"/>
+                                    </Grid>
                                 </Border>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                         
                     </CollectionView>
+                    
                 </VerticalStackLayout>
+
             </ScrollView>
+
         </Grid>
+
     </Grid>
 </ContentPage>
