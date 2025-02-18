@@ -17,8 +17,8 @@ namespace Services
                 Images = new()
                 {
                     "https://cdn.theatlantic.com/thumbor/D15rQggf6357X1-u6VpTD2N1yQE=/0x27:1041x613/976x549/media/img/mt/2017/04/MercuryImage/original.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/73_carousel_mercury_2.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/75_mercury_carousel_1.jpg"
+                    "https://science.nasa.gov/wp-content/uploads/2023/09/spectra-mercury.jpg?w=1024",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/800px-Mercury_in_true_color.jpg"
                 }
             },
             new()
@@ -31,10 +31,10 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#d17f21"),
                 Images = new()
                 {
-                    "https://solarsystem.nasa.gov/system/feature_items/images/143_Venus-800x600.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/147_Hubble_Venus_Clouds-800x600.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/146_venus_carousel_3.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/144_PIA00485_Venus_Caldera-800.jpg"
+                    "https://imgres?q=venus%20planet&imgurl=https%3A%2F%2Fscience.nasa.gov%2Fwp-content%2Fuploads%2F2024%2F03%2Fvenus-mariner-10-pia23791-fig2-16x9-1.jpg&imgrefurl=https%3A%2F%2Fscience.nasa.gov%2Fvenus%2Fvenus-facts%2F&docid=wmfnVZLI3sBoOM&tbnid=zlNDceAlh17rWM&vet=12ahUKEwibyeisi82LAxXePxAIHXzBDhAQM3oECGUQAA..i&w=1920&h=1080&hcb=2&ved=2ahUKEwibyeisi82LAxXePxAIHXzBDhAQM3oECGUQAA",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/PIA00103_Venus_-_3-D_Perspective_View_of_Lavinia_Planitia.jpg/220px-PIA00103_Venus_-_3-D_Perspective_View_of_Lavinia_Planitia.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Venus_-_December_23_2016.png/220px-Venus_-_December_23_2016.png"
+
                 }
             },
             new()
@@ -47,10 +47,10 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#2e97c7"),
                 Images = new()
                 {
-                    "https://solarsystem.nasa.gov/system/feature_items/images/68_epicearthmoonstill_800.png",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/69_earth_carousel_3.jpg",
                     "https://images.newscientist.com/wp-content/uploads/2019/09/09162708/iss048-e-2035_lrg.jpg?width=778",
-                    
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/290px-The_Earth_seen_from_Apollo_17.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/EpicEarth-Globespin-tilt-23.4.gif/290px-EpicEarth-Globespin-tilt-23.4.gif"
+
                 }
             },
             new()
@@ -63,7 +63,7 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#eb3333"),
                 Images = new()
                 {
-                    "https://researchfdi.com/wp-content/uploads/2021/10/8944_1-PIA24546-1280.jpeg",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS3Xbp7bLfUTjKP-6cvZ-XzY5Ddsr_BLflIGGya44KNajshBLeILbVxHg&usqp=CAE&s",
                     "https://www.worldatlas.com/r/w1300-q80/upload/bb/c3/32/shutterstock-1041249343.jpg",
                     "https://www.openaccessgovernment.org/wp-content/uploads/2021/04/dreamstime_xxl_121672573-scaled.jpg",
                 }
@@ -78,9 +78,9 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#cd8026"),
                 Images = new()
                 {
-                    "https://solarsystem.nasa.gov/system/feature_items/images/11_Full_Jupiter-800.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/10_Jupiter_Io_Juno-800.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/13_PIA24237_Jupiter_Cyclones-800.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/290px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Jupiter_size.png/220px-Jupiter_size.png",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/790106-0203_Voyager_58M_to_31M_reduced.gif/220px-790106-0203_Voyager_58M_to_31M_reduced.gif",
                 }
             },
             new()
@@ -93,10 +93,9 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#c6502f"),
                 Images = new()
                 {
-                    "https://solarsystem.nasa.gov/system/feature_items/images/151_saturn_carousel_1.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/152_saturn_carousel_2.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/155_saturn_carousel_5.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/153_saturn_carousel_3.jpg"
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/300px-Saturn_during_Equinox.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Saturn_Storm.jpg/220px-Saturn_Storm.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/f/fe/Saturnoppositions-animated.gif",
                 }
             },
             new()
@@ -109,9 +108,9 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#996237"),
                 Images = new()
                 {
-                    "https://solarsystem.nasa.gov/system/feature_items/images/88_carousel_uranus.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/89_uranus_carousel_1.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/88_carousel_uranus.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Adding_to_Uranus%27s_legacy.tif/lossy-page1-220px-Adding_to_Uranus%27s_legacy.tif.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Uranus_clouds.jpg/170px-Uranus_clouds.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Uranus_Voyager2_color_calibrated.png/290px-Uranus_Voyager2_color_calibrated.png",
                 }
             },
             new()
@@ -124,9 +123,9 @@ namespace Services
                 AccentColorEnd = Color.FromArgb("#26abe0"),
                 Images = new()
                 {
-                    "https://solarsystem.nasa.gov/system/feature_items/images/82_carousel_neptune_1.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/86_carousel_neptune_5.jpg",
-                    "https://solarsystem.nasa.gov/system/feature_items/images/84_neptune_carousel_2.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Neptune_Voyager2_color_calibrated.png/290px-Neptune_Voyager2_color_calibrated.png",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/200px-Neptune_Full.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg",
                 }
             },
         };
