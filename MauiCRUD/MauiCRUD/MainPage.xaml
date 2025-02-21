@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ViewModels"
+             xmlns:models="clr-namespace:Models"
+             x:DataType="vm:ProductsViewModel"
              x:Class="MauiCRUD.MainPage">
 
     <ContentPage.ToolbarItems>
@@ -36,6 +38,35 @@
                     <LinearItemsLayout ItemSpacing="10"
                                        Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Product">
+                        <Grid RowDefinitions="Auto, Auto"
+                              ColumnDefinitions="*, Auto"
+                              RowSpacing="5"
+                              Padding="5"
+                              BackgroundColor="MediumPurple">
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="{Binding Name}"
+                                   FontAttributes="Bold"/>
+                            <Label Grid.Row="1"
+                                   Grid.Column="0"
+                                   Text="{Binding Price, StringFormat='Price: {0}'}"
+                                   FontSize="12"
+                                   FontAttributes="Bold"/>
+                            
+                            <Button Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="Edit"
+                                    Padding="0"
+                                    HeightRequest="25"
+                                    FontSize="12"
+                                    CornerRadius="2"
+                                    Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:ProductsViewModel}},Path=}"
+                                    CommandParameter="{Binding .}"
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
     </Grid>
