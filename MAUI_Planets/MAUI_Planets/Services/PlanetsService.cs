@@ -128,79 +128,118 @@ namespace Services
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg",
                 }
             },
-            new()
-            {
-                Name = "Makemake",
-                Subtitle = "Makemake was named after the Rapanui god of fertility",
-                HeroImage = "Makemake.png",
-                Description = "Makemake (minor-planet designation: 136472 Makemake) is a dwarf planet and the largest of what is known as the classical population of Kuiper belt objects, with a diameter approximately that of Saturn's moon Iapetus, or 60% that of Pluto.[24][25] It has one known satellite.[26] Its extremely low average temperature, about 40 K (−230 °C), means its surface is covered with methane, ethane, and possibly nitrogen ices.[21] Makemake shows signs of geothermal activity and thus may be capable of supporting active geology and harboring an active subsurface ocean.",
-                AccentColorStart = Color.FromArgb("#0c293d"),
-                AccentColorEnd = Color.FromArgb("#26abe0"),
-                Images = new()
-                {
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Makemake_and_its_moon.jpg/290px-Makemake_and_its_moon.jpg",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Makemake_moon_Hubble_two_images.jpg/260px-Makemake_moon_Hubble_two_images.jpg",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Makemake-LB1-2009Nov26-11UT.jpg/220px-Makemake-LB1-2009Nov26-11UT.jpg",
-                }
-            },
-            new()
-            {
-                Name = "Eris",
-                Subtitle = "Eris is one of largest the dwarf planets in our solar system.",
-                HeroImage = "neptune.png",
-                Description= "Eris most likely has a rocky surface similar to Pluto. Scientists think surface temperatures vary from about -359 degrees Fahrenheit (-217 degrees Celsius) to -405 degrees Fahrenheit (-243 degrees Celsius).",
-                AccentColorStart = Color.FromArgb("#0c293d"),
-                AccentColorEnd = Color.FromArgb("#26abe0"),
-                Images = new()
-                {
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Neptune_Voyager2_color_calibrated.png/290px-Neptune_Voyager2_color_calibrated.png",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/200px-Neptune_Full.jpg",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg",
-                }
-            },
-            new()
-            {
-                Name = "Ceres",
-                Subtitle = "Dwarf planet Ceres is the largest object in the asteroid belt between Mars and Jupiter.",
-                HeroImage = "neptune.png",
-                Description = "Neptune is the eighth and farthest known planet from the Sun. It is the fourth-largest planet in the Solar System by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth. Compared to its fellow ice giant Uranus, Neptune is slightly more massive, but denser and smaller. Being composed primarily of gases and liquids, it has no well-defined solid surface, and orbits the Sun once every 164.8 years at an orbital distance of 30.1 astronomical units (4.5 billion kilometres; 2.8 billion miles). It is named after the Roman god of the sea and has the astronomical symbol ♆, representing Neptune's trident.",
-                AccentColorStart = Color.FromArgb("#0c293d"),
-                AccentColorEnd = Color.FromArgb("#26abe0"),
-                Images = new()
-                {
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Neptune_Voyager2_color_calibrated.png/290px-Neptune_Voyager2_color_calibrated.png",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/200px-Neptune_Full.jpg",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg",
-                }
-            },
+
             new()
             {
                 Name = "Pluto",
-                Subtitle = "Pluto is a dwarf planet located in a distant region of our solar system beyond Neptune known as the Kuiper Belt.",
-                HeroImage = "neptune.png",
-                Description = "Neptune is the eighth and farthest known planet from the Sun. It is the fourth-largest planet in the Solar System by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth. Compared to its fellow ice giant Uranus, Neptune is slightly more massive, but denser and smaller. Being composed primarily of gases and liquids, it has no well-defined solid surface, and orbits the Sun once every 164.8 years at an orbital distance of 30.1 astronomical units (4.5 billion kilometres; 2.8 billion miles). It is named after the Roman god of the sea and has the astronomical symbol ♆, representing Neptune's trident.",
+                Subtitle = "The god of the underworld",
+                HeroImage = "pluto.png",
+                Description = "Pluto, discovered in 1930 by Clyde Tombaugh,"+
+                "is a dwarf planet in the outer solar system."+
+                "Originally considered the ninth planet, it was reclassified in 2006."+
+                "With a diameter of about 1,473 miles,"+
+                "Pluto has a thin atmosphere and a complex system of moons, including Charon."+
+                "NASA's New Horizons mission in 2015 provided detailed images,"+
+                "revealing diverse and geologically active features like icy mountains and plains."+
+                "The exploration of Pluto offers insights into the outer solar system.",
                 AccentColorStart = Color.FromArgb("#0c293d"),
                 AccentColorEnd = Color.FromArgb("#26abe0"),
                 Images = new()
                 {
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Neptune_Voyager2_color_calibrated.png/290px-Neptune_Voyager2_color_calibrated.png",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/200px-Neptune_Full.jpg",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA21863_modest.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA11709_modest.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA21026_modest.jpg"
+                }
+            },
+
+            new()
+            {
+                Name = "Ceres",
+                Subtitle = "The goddess of agriculture, fertility, and motherly relationships",
+                HeroImage = "ceres.png",
+                Description = "Ceres is the largest object in the asteroid belt between"+
+                "Mars and Jupiter and is classified as a dwarf planet."+
+                "Discovered by Italian astronomer Giuseppe Piazzi in 1801,"+
+                "Ceres has a diameter of about 590 miles (940 kilometers)."+
+                "It was the first dwarf planet to be visited by a spacecraft"+
+                "when NASA's Dawn mission orbited and studied it from 2015 to 2018."+
+                "Ceres is unique for hosting a large, bright area known as Occator Crater,"+
+                "which contains bright deposits believed to be composed of sodium carbonate,"+
+                "possibly originating from subsurface water."+
+                "The dwarf planet is of particular interest to scientists as it provides"+
+                "insights into the early solar system and the potential presence of water ice on its surface.",
+                AccentColorStart = Color.FromArgb("#0c293d"),
+                AccentColorEnd = Color.FromArgb("#26abe0"),
+                Images = new()
+                {
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA23017_modest.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA21918_modest.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA21906_modest.jpg"
+                }
+            },
+
+            new()
+            {
+                Name = "Haumea",
+                Subtitle = "The Hawaiian goddess of fertility and childbirth",
+                HeroImage = "haumea.png",
+                Description = "Haumea is another dwarf planet in the Kuiper Belt,"+
+                "discovered in 2004 by a team of astronomers led by Mike Brown."+
+                "It is named after the Hawaiian goddess of fertility."+
+                "Haumea is distinctive due to its elongated shape, resembling a flattened ellipsoid,"+
+                "possibly the result of a rapid rotation. It has two known moons, Hi'iaka and Namaka,"+
+                "named after Hawaiian goddesses and discovered in 2005."+
+                "Haumea's surface is thought to be composed of crystalline water ice,"+
+                "and it displays a relatively high albedo, making it one of the brighter objects in the Kuiper Belt."+
+                "The discovery of Haumea and its unique characteristics has contributed to"+
+                "our understanding of the diversity of objects in the outer solar system.",
+                AccentColorStart = Color.FromArgb("#0c293d"),
+                AccentColorEnd = Color.FromArgb("#26abe0"),
+                Images = new()
+                {
+                    "https://static.wikia.nocookie.net/expanse/images/1/1f/Haumea_in_Celestia.jpg/revision/latest?cb=20200206143331"
                 }
             },
             new()
             {
-                Name = "Haumea",
-                Subtitle = "The god of the sea",
-                HeroImage = "neptune.png",
-                Description = "Neptune is the eighth and farthest known planet from the Sun. It is the fourth-largest planet in the Solar System by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth. Compared to its fellow ice giant Uranus, Neptune is slightly more massive, but denser and smaller. Being composed primarily of gases and liquids, it has no well-defined solid surface, and orbits the Sun once every 164.8 years at an orbital distance of 30.1 astronomical units (4.5 billion kilometres; 2.8 billion miles). It is named after the Roman god of the sea and has the astronomical symbol ♆, representing Neptune's trident.",
+                Name = "MakeMake",
+                Subtitle = "The deity of creation and fertility",
+                HeroImage = "makemake.png",
+                Description = "Makemake is another dwarf planet located in the Kuiper Belt,"+
+                "a region of the outer solar system beyond Neptune."+
+                "It was discovered in 2005 by astronomers using the Palomar Observatory."+
+                "Similar to Pluto and Eris, Makemake is part of the group of trans-Neptunian objects known as dwarf planets."+
+                "It is notable for its lack of a significant atmosphere and its relatively high albedo,"+
+                "indicating a bright and reflective surface, likely composed of a mixture of frozen methane"+
+                "ethane, and nitrogen. Makemake is the second-brightest dwarf planet after Pluto and"+
+                "is recognized as one of the largest objects in the Kuiper Belt."+
+                "Its discovery contributed to the ongoing understanding and classification of objects in the outer solar system.",
+                AccentColorStart = Color.FromArgb("#0c293d"),
+    AccentColorEnd = Color.FromArgb("#26abe0"),
+    Images = new()
+    {
+        "https://upload.wikimedia.org/wikipedia/commons/2/29/Makemake_and_its_moon.jpg"
+    }
+            },
+
+            new()
+            {
+                Name = "Eris",
+                Subtitle = "The goddess of strife, discord, and chaos",
+                HeroImage = "eris.png",
+                Description = "Eris, a dwarf planet situated in the scattered disk of the outer solar system,"+
+                "was identified in 2005 by astronomers at the Palomar Observatory."+
+                "Smaller than Pluto but more massive, Eris ranks among the largest dwarf planets."+
+                "Its orbit, more elliptical than Pluto's, places it at a greater average distance from the Sun."+
+                "Eris boasts a highly reflective surface, likely comprising a mix of water ice and frozen methane."+
+                "The discovery of Eris played a crucial role in the reclassification of Pluto and similar objects,"+
+                "leading to the establishment of the \"dwarf planet\" category by the International Astronomical Union (IAU).",
                 AccentColorStart = Color.FromArgb("#0c293d"),
                 AccentColorEnd = Color.FromArgb("#26abe0"),
                 Images = new()
                 {
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Neptune_Voyager2_color_calibrated.png/290px-Neptune_Voyager2_color_calibrated.png",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/200px-Neptune_Full.jpg",
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Neptune_storms.jpg/220px-Neptune_storms.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA17307_modest.jpg",
+                    "https://photojournal.jpl.nasa.gov/jpegMod/PIA03034_modest.jpg"
                 }
             },
         };
