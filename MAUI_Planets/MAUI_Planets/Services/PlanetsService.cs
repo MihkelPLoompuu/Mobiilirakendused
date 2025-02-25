@@ -133,7 +133,7 @@ namespace Services
             {
                 Name = "Pluto",
                 Subtitle = "The god of the underworld",
-                HeroImage = "pluto.png",
+                HeroImage = "https://cdn.pixabay.com/photo/2023/09/06/03/15/pluto-8236209_640.png",
                 Description = "Pluto, discovered in 1930 by Clyde Tombaugh,"+
                 "is a dwarf planet in the outer solar system."+
                 "Originally considered the ninth planet, it was reclassified in 2006."+
@@ -156,7 +156,7 @@ namespace Services
             {
                 Name = "Ceres",
                 Subtitle = "The goddess of agriculture, fertility, and motherly relationships",
-                HeroImage = "ceres.png",
+                HeroImage = "https://cdn.pixabay.com/photo/2023/09/06/03/15/ceres-8236207_1280.png",
                 Description = "Ceres is the largest object in the asteroid belt between"+
                 "Mars and Jupiter and is classified as a dwarf planet."+
                 "Discovered by Italian astronomer Giuseppe Piazzi in 1801,"+
@@ -182,7 +182,7 @@ namespace Services
             {
                 Name = "Haumea",
                 Subtitle = "The Hawaiian goddess of fertility and childbirth",
-                HeroImage = "haumea.png",
+                HeroImage = "https://cdn.pixabay.com/photo/2023/09/06/03/15/haumea-8236206_1280.png",
                 Description = "Haumea is another dwarf planet in the Kuiper Belt,"+
                 "discovered in 2004 by a team of astronomers led by Mike Brown."+
                 "It is named after the Hawaiian goddess of fertility."+
@@ -204,7 +204,7 @@ namespace Services
             {
                 Name = "MakeMake",
                 Subtitle = "The deity of creation and fertility",
-                HeroImage = "makemake.png",
+                HeroImage = "https://cdn.pixabay.com/photo/2023/09/06/03/15/makemake-8236208_1280.png",
                 Description = "Makemake is another dwarf planet located in the Kuiper Belt,"+
                 "a region of the outer solar system beyond Neptune."+
                 "It was discovered in 2005 by astronomers using the Palomar Observatory."+
@@ -226,7 +226,7 @@ namespace Services
             {
                 Name = "Eris",
                 Subtitle = "The goddess of strife, discord, and chaos",
-                HeroImage = "eris.png",
+                HeroImage = "https://cdn.pixabay.com/photo/2023/09/06/03/15/eris-8236210_1280.png",
                 Description = "Eris, a dwarf planet situated in the scattered disk of the outer solar system,"+
                 "was identified in 2005 by astronomers at the Palomar Observatory."+
                 "Smaller than Pluto but more massive, Eris ranks among the largest dwarf planets."+

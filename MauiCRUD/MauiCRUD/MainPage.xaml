@@ -62,7 +62,7 @@
                                     HeightRequest="25"
                                     FontSize="12"
                                     CornerRadius="2"
-                                    Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:ProductsViewModel}},Path=}"
+                                    Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:ProductsViewModel}},Path=SetOperatingProductCommand}"
                                     CommandParameter="{Binding .}"
                         </Grid>
                     </DataTemplate>
