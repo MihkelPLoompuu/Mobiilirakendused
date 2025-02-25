@@ -30,14 +30,14 @@ namespace ViewModels
 
         public async Task LoadProductsAsync()
         {
-            await ExecuteAsync(async () => 
-            { 
+            await ExecuteAsync(async () =>
+            {
                 var products = await _context.GetAllAsync<Product>();
-                if(Products is not null && products.Any())
+                if (Products is not null && products.Any())
                 {
                     Products ??= new ObservableCollection<Product>();
 
-                    foreach(var product in products)
+                    foreach (var product in products)
                     {
                         Products.Add(product);
                     }
@@ -55,6 +55,7 @@ namespace ViewModels
             }
             catch (Exception)
             {
+
                 throw;
             }
             finally
@@ -63,8 +64,9 @@ namespace ViewModels
                 BusyText = "Processing...";
             }
         }
+
         [RelayCommand]
-        private void SetOperatingProduct(Product? product) => OperatingProduct = product?? new();
+        private void SetOperatingProduct(Product? product) => OperatingProduct = product ?? new();
 
         [RelayCommand]
         private async Task SaveProductAsync()
@@ -77,7 +79,7 @@ namespace ViewModels
             var (isValid, errorMessage) = OperatingProduct.Validate();
             if (!isValid)
             {
-                await Shell.Current.DisplayAlert("Validation Erroe", errorMessage, "Ok");
+                await Shell.Current.DisplayAlert("Validation Error", errorMessage, "Ok");
                 return;
             }
 
@@ -100,9 +102,9 @@ namespace ViewModels
 
                         Products.Insert(index, productCopy);
                     }
-                    else 
+                    else
                     {
-                        await Shell.Current.DisplayAlert("Error", "Product updating error", "Ok");
+                        await Shell.Current.DisplayAlert("Error", "Product updating error", "OK");
                         return;
                     }
                 }
@@ -122,8 +124,7 @@ namespace ViewModels
                 }
                 else
                 {
-                    await Shell.Current.DisplayAlert("Delete Error", "Product was not deleted", "Ok");
-
+                    await Shell.Current.DisplayAlert("Delete Error", "Product was not deleted", "OK");
                 }
             }, "Deleting product...");
         }
