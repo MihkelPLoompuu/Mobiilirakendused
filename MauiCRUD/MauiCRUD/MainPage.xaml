@@ -54,7 +54,7 @@
                                    Text="{Binding Price, StringFormat='Price: {0}'}"
                                    FontSize="12"
                                    FontAttributes="Bold"/>
-                            
+
                             <Button Grid.Row="0"
                                     Grid.Column="1"
                                     Text="Edit"
@@ -63,7 +63,7 @@
                                     FontSize="12"
                                     CornerRadius="2"
                                     Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:ProductsViewModel}},Path=SetOperatingProductCommand}"
-                                    CommandParameter="{Binding .}"
+                                    CommandParameter="{Binding .}"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

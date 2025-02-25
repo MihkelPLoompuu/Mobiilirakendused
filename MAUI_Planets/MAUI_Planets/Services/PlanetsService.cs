@@ -218,7 +218,7 @@ namespace Services
     AccentColorEnd = Color.FromArgb("#26abe0"),
     Images = new()
     {
-        "https://upload.wikimedia.org/wikipedia/commons/2/29/Makemake_and_its_moon.jpg"
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Makemake_and_its_moon.jpg/290px-Makemake_and_its_moon.jpg"
     }
             },
 
