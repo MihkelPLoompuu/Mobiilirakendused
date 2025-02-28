@@ -6,15 +6,45 @@
     xmlns:local="clr-namespace:MAUICommerce"
     Shell.FlyoutBehavior="Disabled"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    Title="MAUICommerce">
+    xmlns:pages="crl-namespace:MAUICommerce.Pages"
+    Shell.TabBarBackgroundColor="{StaticResource Mid}"
+    Shell.TabBarTitleColor="{StaticResource White}"
+    Shell.BackgroundColor="{StaticResource Mid}">
 
     <Shell.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}"/>
     </Shell.Behaviors>
     
-    <ShellContent
-        Title="Home"
+    <!--<ShellContent
+        Title="FruitVeg Basket"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
+
+    <TabBar>
+        <ShellContent Title="Home"
+                      Icon="bxhome"
+                      ContentTemplate="{DataTemplate pages:HomePage}"
+                      Route="HomePage"/>
+
+        <ShellContent Title="Categories"
+                      Icon="bxscategory"
+                      ContentTemplate="{DataTemplate pages:CategoriesPage}"
+                      Route="CategoriesPage"/>
+        
+        <ShellContent Title="Orders"
+                      Icon="bxlist"
+                      ContentTemplate="{DataTemplate pages:OrdersPage}"
+                      Route="OrdersPage"/>
+        
+        <ShellContent Title="Profile"
+                      Icon="bxuser"
+                      ContentTemplate="{DataTemplate pages:ProfilePage}"
+                      Route="ProfilePage"/>
+
+        <ShellContent Title="Help"
+                      Icon="bxhelp"
+                      ContentTemplate="{DataTemplate pages:HelpPage}"
+                      Route="HelpPage"/>
+    </TabBar>
 
 </Shell>
