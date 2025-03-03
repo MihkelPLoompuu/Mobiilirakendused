@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:MAUICommerce"
     Shell.FlyoutBehavior="Disabled"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    xmlns:pages="crl-namespace:MAUICommerce.Pages"
+    xmlns:pages="crl-namespace:MAUICommerce.Pages.HomePage"
     Shell.TabBarBackgroundColor="{StaticResource Mid}"
     Shell.TabBarTitleColor="{StaticResource White}"
     Shell.BackgroundColor="{StaticResource Mid}">

@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pages.HomePage"
              Shell.NavBarIsVisible="False"           
-             xmlns:vm="crl-namespace:ViewModels"
+             xmlns:vm="crl-namespace:MAUICommerce.ViewModels"
              xmlns:models="crl-namespace:Models"  
-             x:DataType="vm:HomePageViewModel"
+             x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel"
              Title="HomePage">
 
     <ContentPage.Resources>
@@ -79,7 +79,7 @@
                                        ItemSpacing="12"/>
                 </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Category">
+                <DataTemplate x:DataType="MAUICommerce:ViewModels.models:Category">
                     <Border StrokeShape="RoundRectangle 5"
                             StrokeThickness="0">
                         <Grid>
