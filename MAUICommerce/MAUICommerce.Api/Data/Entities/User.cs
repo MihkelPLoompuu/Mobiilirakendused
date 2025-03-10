@@ -1,4 +1,4 @@
-﻿using MAUICommerce.Shared.Enumarations;
+﻿using MAUICommerce.Shared.Enumerations;
 using System.Drawing;
 
 namespace MAUICommerce.Api.Data.Entities
@@ -43,15 +43,17 @@ namespace MAUICommerce.Api.Data.Entities
         public DateTime Date { get; set; } = DateTime.Now;
         public decimal TotalAmount { get; set;}
         public OrderStatus Status { get; set; } = OrderStatus.Placed;
+    }
+    public class OrderTime
+    {
+        public Guid Id { get; set; }
+        public long OrderId { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+        public decimal Quantity { get; set; }   
+        public decimal Amount { get; set; }
 
-        public Color Color => _orderStatusColorMap[Status];
-
-        private static readonly IReadOnlyDictionary<OrderStatus, Color> _orderStatusColorMap = new Dictionary<OrderStatus, Color>
-        {
-            { OrderStatus.Placed, Colors.Yellow },
-            { OrderStatus.Confirmed, Colors.Blue },
-            { OrderStatus.Delivered, Colors.Green },
-            { OrderStatus.Cancelled, Colors.Red }
-        };
+        public virtual Order Order { get; set; }
     }
 }
