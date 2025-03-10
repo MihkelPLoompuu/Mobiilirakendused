@@ -1,4 +1,4 @@
-﻿namespace MAUICommerce.Enumerations
+﻿namespace MAUICommerce.Shared.Enumerations
 {
     public enum OrderStatus
     {

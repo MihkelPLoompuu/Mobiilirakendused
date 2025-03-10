@@ -1,0 +1,6 @@
+@MAUICommerce.Api_HostAddress = http://localhost:5159
+
+GET {{MAUICommerce.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

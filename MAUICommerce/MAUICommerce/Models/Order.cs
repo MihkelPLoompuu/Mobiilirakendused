@@ -1,4 +1,4 @@
-﻿using MAUICommerce.Enumerations;
+﻿using MAUICommerce.Shared.Enumerations;
 
 namespace Models
 {
