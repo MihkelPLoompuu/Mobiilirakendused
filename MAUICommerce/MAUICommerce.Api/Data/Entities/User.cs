@@ -1,59 +1,44 @@
-﻿using MAUICommerce.Shared.Enumerations;
-using System.Drawing;
+﻿using MAUICommerce.Api.Constants;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MAUICommerce.Api.Data.Entities
 {
+    [Table(nameof(User))]
     public class User
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required, MaxLength(30)]
         public string Name { get; set; }
+
+        [Required, MaxLength(100)]
         public string Email { get; set; }
+
+        [Required, MaxLength(20)]
         public string Mobile { get; set; }
         public short RoleId { get; set; }
+
+        [Required, MaxLength(25)]
+        [Comment("We should not have plain password. Having this just for simplicity and demo purpose")]
         public string Password { get; set; }
-
         public virtual Role Role { get; set; }
-    }
-    public class Role
-    {
-        public short Id { get; set; }
-        public string Name { get; set; }
-    }
-    public class Category
-    {
-        public short Id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public short ParentId { get; set; }
-        public string? Credit { get; set; }
-    }
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
-        public decimal Price { get; set; }
-        public short CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual ICollection<Address> Addresses { get; set; }
 
-    }
-    public class Order
-    {
-        public long Id { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
-        public decimal TotalAmount { get; set;}
-        public OrderStatus Status { get; set; } = OrderStatus.Placed;
-    }
-    public class OrderTime
-    {
-        public Guid Id { get; set; }
-        public long OrderId { get; set; }
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
-        public decimal Quantity { get; set; }   
-        public decimal Amount { get; set; }
-
-        public virtual Order Order { get; set; }
+        public static IEnumerable<User> GetInitialUsers() =>
+            new List<User>
+            {
+                new User
+                {
+                    Id = 1,
+                    Name = "Mihkel Ploompuu",
+                    Email = "mihkelploompuu@gmail.com",
+                    Mobile = "1234567890",
+                    Password = "12345",
+                    RoleId = DatabaseConstants.Roles.Admin.Id
+                }
+            };
     }
 }

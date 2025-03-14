@@ -1,4 +1,8 @@
 
+using MAUICommerce.Api.Constants;
+using MAUICommerce.Api.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace MAUICommerce.Api
 {
     public class Program
@@ -13,6 +17,8 @@ namespace MAUICommerce.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<DataContext>(optsions => optsions.UseSqlServer(builder.Configuration.GetConnectionString(DatabaseConstants.GroceryConnectionStringKey)));
 
             var app = builder.Build();
 
