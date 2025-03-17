@@ -7,10 +7,15 @@
              xmlns:models="crl-namespace:Models"  
              xmlns:controls="clr-namespace:Controls;assembly=MAUICommerce"
              x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel"
+             xmlns:converters="clr-namespace:Converters;assembly=MAUICommerce"
              Title="HomePage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
+
+            <converters:stringToColorConverter x:Key="stringToColor"/>
+
+
             <Style TargetType="Label" x:Key="H1">
                 <Setter Property="FontSize" Value="24"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -88,7 +93,7 @@
                             HeightRequest="180"
                             WidthRequest="300">
                         <Grid RowDefinitions="Auto, *, Auto">
-                            <BoxView Color="{Binding BgColor}"
+                            <BoxView Color="{Binding BgColor, Converter ={StaticResource stringToColor}}"
                                      Opacity="0.5"/>
                             <Grid RowDefinitions="Auto, *, Auto"
                                   Padding="15">
