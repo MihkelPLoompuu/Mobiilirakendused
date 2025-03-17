@@ -7,7 +7,7 @@
              xmlns:models="crl-namespace:Models"  
              xmlns:controls="clr-namespace:Controls;assembly=MAUICommerce"
              x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel"
-             xmlns:converters="clr-namespace:Converters;assembly=MAUICommerce"
+             xmlns:converters="clr-namespace:Converter"
              Title="HomePage">
 
     <ContentPage.Resources>

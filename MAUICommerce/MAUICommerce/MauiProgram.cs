@@ -4,6 +4,7 @@ using Pages;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using Constants;
+using Interfaces;
 
 namespace MAUICommerce
 {
@@ -23,9 +24,9 @@ namespace MAUICommerce
             builder.Services.AddSingleton<IPlatformHttpMessageHandler>(sp =>
             {
 #if ANDROID
-                return new Platform.Android.AndroidHttpMessageHandler();
+                return new Platforms.Android.AndroidHttpMessageHandler();
 #elif IOS
-            return new Platform.iOS.IosHttpMessageHandler();
+            return new Platforms.iOS.IosHttpMessageHandler();
 #endif
             });
 
