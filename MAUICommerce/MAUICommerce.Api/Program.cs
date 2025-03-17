@@ -31,12 +31,19 @@ namespace MAUICommerce.Api
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            var masterGroup = app.MapGroup("/master").AllowAnonymous();
+            masterGroup.MapGet("/categories", async (DataContext context) =>
+                await context.Categories
+                .AsNoTracking()
+                .ToArrayAsync()
+             );
+            masterGroup.MapGet("/offers", async (DataContext context) =>
+                await context.Categories
+                .AsNoTracking()
+                .ToArrayAsync()
+             );
 
-
-            app.MapControllers();
-
-            app.Run();
+            app.Run("https://localhost:12345");
         }
     }
 }
