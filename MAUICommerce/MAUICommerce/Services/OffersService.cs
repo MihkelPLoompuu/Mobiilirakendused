@@ -7,29 +7,16 @@ using System.Text.Json;
 
 namespace Services
 {
-    public class OffersServices
+    public class OffersServices : BaseApiService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        public OffersServices(IHttpClientFactory httpClientFactory)
+        public OffersServices(IHttpClientFactory httpClientFactory) : base(httpClientFactory)
         {
-            _httpClientFactory = httpClientFactory;
         }
         public async Task<IEnumerable<Offer>> GetActiveOffersAsync()
-        {
-            var httpClient = _httpClientFactory.CreateClient(AppConstants.HttpClientName);
-            var response = await httpClient.GetAsync("/master/offers");
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                if (!string.IsNullOrEmpty(content))
-                {
-                    return JsonSerializer.Deserialize<IEnumerable<Offer>>(content, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-                }
-            }
-            return Enumerable.Empty<Offer>();
+        {      
+            var response = await HttpClient.GetAsync("/master/offers");
+            return await HandleApiResponsesAsync<IEnumerable<Offer>>(response, Enumerable.Empty<Offer>());
         }
     }
 }

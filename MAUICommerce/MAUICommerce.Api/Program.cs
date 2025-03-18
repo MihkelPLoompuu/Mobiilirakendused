@@ -35,8 +35,7 @@ namespace MAUICommerce.Api
             masterGroup.MapGet("/categories", async (DataContext context) =>
                 await context.Categories
                 .AsNoTracking()
-                .ToArrayAsync()
-             );
+                .ToArrayAsync());
             masterGroup.MapGet("/offers", async (DataContext context) =>
                 await context.Categories
                 .AsNoTracking()
