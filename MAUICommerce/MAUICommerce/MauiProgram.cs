@@ -28,6 +28,7 @@ namespace MAUICommerce
 #elif IOS
             return new Platforms.iOS.IosHttpMessageHandler();
 #endif
+                return null;
             });
 
             builder.Services.AddHttpClient(Constants.AppConstants.HttpClientName, httpClient =>
