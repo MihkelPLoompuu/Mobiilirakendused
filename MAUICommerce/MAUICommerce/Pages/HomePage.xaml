@@ -5,15 +5,15 @@
              Shell.NavBarIsVisible="False"           
              xmlns:vm="crl-namespace:MAUICommerce.ViewModels"
              xmlns:models="crl-namespace:Models"  
-             xmlns:controls="clr-namespace:Controls;assembly=MAUICommerce"
-             x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel"
+             xmlns:controls="clr-namespace:Controls;assembly=MAUICommerce"           
              xmlns:converters="clr-namespace:Converter"
-             Title="HomePage">
+             Title="HomePage"
+             x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel">
 
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <converters:stringToColorConverter x:Key="stringToColor"/>
+            <converters:StringToColorConverter x:Key="StringToColor"/>
 
 
             <Style TargetType="Label" x:Key="H1">
@@ -145,8 +145,8 @@
                                    WidthRequest="150"
                                    Opacity="0.9"/>
                                 <Image.Source>
-                                    <UriImageSource Uri ="{Binding Image}"
-                                             CachingEnabled="True"/>
+                                    <UriImageSource Uri="{Binding Image}"
+                                                    CachingEnabled="True"/>
                                 </Image.Source>
                                 <Border StrokeShape="RoundRectangle 8"
                                  StrokeThickness="0"
@@ -170,16 +170,18 @@
 
             <Label Text="Popular"
             Style="{StaticResource H2}"/>
-
+            <FlexLayout>
+                
+            </FlexLayout>
         </VerticalStackLayout>
-        <Grid isVisible="{Binding IsBusy}">
-            <BoxView Color="{StativResourc Mid}"/>
+        <Grid IsVisible="{Binding IsBusy}">
+            <BoxView Color="{StaticResource Mid}"/>
             <VerticalStackLayout HorizontalOptions="Center"
                                  VerticalOptions="Center">
-                <ActivityIndicator isRunning="True"
-                                    Color="White"
-                                   HorizontalOptions ="Center"/>
-                <Lable Text="Fetching data..."
+                <ActivityIndicator IsRunning="True"
+                                   Color="White"
+                                   HorizontalOptions="Center"/>
+                <Label Text="Fetching data..."
                        TextColor="White"
                        HorizontalOptions="Center"/>
             </VerticalStackLayout>

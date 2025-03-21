@@ -47,7 +47,7 @@ namespace ViewModels
             }          
            finally 
             {
-                _isBusy = false;
+                IsBusy = false;
             }          
         }
     }

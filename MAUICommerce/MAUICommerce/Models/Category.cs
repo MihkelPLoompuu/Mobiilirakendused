@@ -6,7 +6,7 @@ namespace Models
 {
     public class Category
     {
-        public Category(short id, string name, short parentId ,string image, string credit)
+        public Category(short id, string name, short parentId, string image, string credit)
         {
             Id = id;
             Name = name;
@@ -16,19 +16,22 @@ namespace Models
 
         public short Id { get; set; }
         public string Name { get; set; }
-        private string _image;  
-        public string Image 
+
+        //public string Image { get; set; }
+        private string _image;
+        public string Image
         {
             get => _image;
             set
             {
-                _image = $"https://10.0.2.2:12345/images/{value}";
+                _image = $"https://raw.githubusercontent.com/Abhayprince/FruitVegBasketMAUI/part-7/FruitVegBasket.Api/wwwroot/images/categories/{value}";
             }
         }
+
         public short ParentId { get; set; }
         public string? Credit { get; set; }
+
         public bool IsMainCategory => ParentId == 0;
-        //public string ImageUrl => $"https:/localhost:12345/images/{Image}";
-        
+        //public string ImageUrl => $"https:/localhost:12345/images/categories/{Image}";
     }
 }
