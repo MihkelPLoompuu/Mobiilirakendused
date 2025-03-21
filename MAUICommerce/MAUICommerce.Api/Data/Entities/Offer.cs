@@ -40,7 +40,7 @@ namespace MAUICommerce.Api.Data.Entities
         };
         private static string RandomColor => _lightColors.OrderBy(c => Guid.NewGuid()).First();
 
-        public static IEnumerable<Offer> GetInitialOffer() =>
+        public static IEnumerable<Offer> GetInitialData() =>
             new List<Offer>()
             {
                  new Offer(1,"Up to 30% off", "Enjoy up to 30% off on all products", RandomColor, "FRT30"),

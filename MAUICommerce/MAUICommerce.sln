@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAUICommerce", "MAUICommerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUICommerce.Api", "MAUICommerce.Api\MAUICommerce.Api.csproj", "{09321BAF-51E7-4E29-8537-377DC387F2F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUICommerce.Shared", "MAUICommerce.Shared\MAUICommerce.Shared.csproj", "{3F5A9E1D-FE89-46A9-9A8F-60D076542828}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUICommerce.Shared", "MAUICommerce.Shared\MAUICommerce.Shared.csproj", "{5CE9D73F-95B4-4CF2-8FA0-8F2BF0683145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,10 @@ Global
 		{09321BAF-51E7-4E29-8537-377DC387F2F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09321BAF-51E7-4E29-8537-377DC387F2F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09321BAF-51E7-4E29-8537-377DC387F2F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F5A9E1D-FE89-46A9-9A8F-60D076542828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F5A9E1D-FE89-46A9-9A8F-60D076542828}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F5A9E1D-FE89-46A9-9A8F-60D076542828}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F5A9E1D-FE89-46A9-9A8F-60D076542828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE9D73F-95B4-4CF2-8FA0-8F2BF0683145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE9D73F-95B4-4CF2-8FA0-8F2BF0683145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE9D73F-95B4-4CF2-8FA0-8F2BF0683145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE9D73F-95B4-4CF2-8FA0-8F2BF0683145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

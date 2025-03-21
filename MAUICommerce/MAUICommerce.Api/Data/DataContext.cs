@@ -28,8 +28,9 @@ namespace MAUICommerce.Api.Data
         {
             modelBuilder.Entity<Role>().HasData(Role.GetInitialRoles());
             modelBuilder.Entity<User>().HasData(User.GetInitialUsers());
-            modelBuilder.Entity<Category>().HasData(Category.GetInitialCategorys());
-            modelBuilder.Entity<Offer>().HasData(Offer.GetInitialOffer());
+            modelBuilder.Entity<Category>().HasData(Category.GetInitialData());
+            modelBuilder.Entity<Offer>().HasData(Offer.GetInitialData());
+            modelBuilder.Entity<Product>().HasData(Product.GetInitialData());
         }
     }
 }

@@ -31,7 +31,7 @@ namespace MAUICommerce.Api.Data.Entities
         {
 
         }
-        public static IEnumerable<Category> GetInitialCategorys()
+        public static IEnumerable<Category> GetInitialData()
         {
             var categories = new List<Category>();
 

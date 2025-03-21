@@ -1,6 +1,7 @@
 
 using MAUICommerce.Api.Constants;
 using MAUICommerce.Api.Data;
+using MAUICommerce.Api.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAUICommerce.Api
@@ -33,14 +34,30 @@ namespace MAUICommerce.Api
 
             var masterGroup = app.MapGroup("/master").AllowAnonymous();
             masterGroup.MapGet("/categories", async (DataContext context) =>
-                await context.Categories
-                .AsNoTracking()
-                .ToArrayAsync());
-            masterGroup.MapGet("/offers", async (DataContext context) =>
-                await context.Categories
+                 TypedResults.Ok(await context.Categories
                 .AsNoTracking()
                 .ToArrayAsync()
+                )
+            );
+            masterGroup.MapGet("/offers", async (DataContext context) =>
+                TypedResults.Ok(await context.Categories
+                .AsNoTracking()
+                .ToArrayAsync()
+                )
              );
+
+            app.MapGet("/popular-product", async (DataContext context, int? count) =>
+            {
+                if (!count.HasValue || count <= 0)
+                    count = 6;
+                var randomProduct = await context.Products
+                                        .AsNoTracking()
+                                        .OrderBy(p => Guid.NewGuid())
+                                        .Take(count.Value)
+                                        .Select(Product.DtoSelector)
+                                        .ToArrayAsync();
+                return TypedResults.Ok(randomProduct);
+            });
 
             app.Run("https://localhost:12345");
         }
