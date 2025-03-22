@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using MAUICommerce.Shared.Dtos;
 using Models;
 using Services;
@@ -49,6 +50,19 @@ namespace ViewModels
             {
                 IsBusy = false;
             }          
+        }
+
+        [RelayCommand]
+        private void AddToCart(int productId) => UpdaetCart(productId, 1);
+        [RelayCommand]
+        private void RemoveFromCart(int productId) => UpdaetCart(productId, -1);
+        private void UpdaetCart(int productId,int count)
+        {
+            var product = PopularProducts.FirstOrDefault(p => p.Id == productId);
+            if (product is not null)
+            {
+                product.CartQuanity = count;
+            }
         }
     }
 }
