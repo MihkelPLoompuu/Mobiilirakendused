@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:MAUICommerce.Pages"
+             xmlns:models="crl-namespace:MAUICommerce.Models"
+             x:Class="Pages.Categories"
+             Title="Categories"
+             x:DataType="pages:CategoriesPage">
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding Categories}"
+                        ItemsLayout="VerticalGrid, 3">
+            <CollectionView..ItemTemplate>
+                <DataTemplate x:DataType="MAUICommerce:models:Category"
+            </CollectionView..ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+</ContentPage>
