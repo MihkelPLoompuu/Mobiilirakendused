@@ -8,43 +8,54 @@
              xmlns:dto="clr-namespace:MAUICommerce.Shared.Dtos;assembly=MAUICommerce.Shared"
              x:DataType="vm:MAUICommerce:ViewModels.CategoryProductsPageViewModel"
              Title="{Binding PageTitle}">
-    <Grid ColumnDefinitions="80,*">
-        <CollectionView Grid.Column="0"
+    <Grid>
+        <Grid ColumnDefinitions="80,*">
+            <CollectionView Grid.Column="0"
                          ItemsSource="{Binding Categories}"
                          BackgroundColor="{StaticResource Primary}">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical"
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
                                     ItemSpacing="15"/>
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="MAUICommerce:models:Category">
-                    <VerticalStackLayout HorizontalOptions="Center"
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="MAUICommerce:models:Category">
+                        <VerticalStackLayout HorizontalOptions="Center"
                                           VerticalOptions="Center"
                                           WidthRequest="80"
                                           Padding="0,10,0,0">
-                        <Border StrokeShape="RoundRectangle 35"
+                            <Border StrokeShape="RoundRectangle 35"
                                  StrokeThickness="0"
                                  HeightRequest="70"
                                  WidthRequest="70"
                                  HorizontalOptions="Center">
-                            <Image Source="{Binding Image}"
+                                <Image Source="{Binding Image}"
                                     Aspect="AspectFill"
                                     HeightRequest="70"
                                     WidthRequest="70"/>
 
-                        </Border>
-                        <Label Text="{Binding Name}"
+                            </Border>
+                            <Label Text="{Binding Name}"
                                 TextColor="White"
                                 FontSize="12"
                                 LineBreakMode="WordWrap"
                                 FontAttributes="Bold"
                                 HorizontalTextAlignment="Center"/>
-                    </VerticalStackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <ScrollView Grid.Column="1">
-            <Label Text="Products"/>
-        </ScrollView>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <ScrollView Grid.Column="1">
+                <controls:ProductsListControl Products="{Binding Products}"
+                               AddRemoveCartClicked="ProductsListControl_AddRemoveCartClicked"
+                                              IsSmall="True"/>
+            </ScrollView>
+        </Grid>
+        <controls:CartControl Count="{Binding CartCount}"/>
+        <ActivityIndicator VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HeightRequest="30"
+                           WidthRequest="30"
+                           IsRunning="{Binding IsBusy}"
+                           Color="{StaticResource Mid}"/>
     </Grid>
 </ContentPage>

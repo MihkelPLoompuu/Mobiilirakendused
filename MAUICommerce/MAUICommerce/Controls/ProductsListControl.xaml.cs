@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Input;
 using MAUICommerce.Shared.Dtos;
 
 namespace Controls;
@@ -17,9 +18,12 @@ public partial class ProductsListControl : ContentView
 	public static readonly BindableProperty ProductsProperty =
 		BindableProperty.Create(nameof(Products), typeof(IEnumerable<ProductDto>), typeof(ProductsListControl), Enumerable.Empty<ProductDto>());
 
+    public static readonly BindableProperty IsSmallProperty = 
+        BindableProperty.Create(nameof(IsSmall),typeof(bool), typeof(ProductsListControl), false,
+            propertyChanged: OnIsSmallPropertyChanged);
     public ProductsListControl()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
 	public event EventHandler<ProductCartItemChangeEventArgs> AddRemoveCartClicked;
@@ -29,7 +33,30 @@ public partial class ProductsListControl : ContentView
         set => SetValue(ProductsProperty, value);
     }
 
-	[RelayCommand]
+	public bool IsSmall 
+    { 
+        get => (bool)GetValue(IsSmallProperty); 
+        set => SetValue(IsSmallProperty, value); 
+    }
+
+    public bool IsDefualt => !IsSmall;
+
+
+    //public IList<string> CartButtonStyles { get; set; } = new List<string> { "CartBtn", "DefualtCartBtn" };
+
+
+    private static void OnIsSmallPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+       if(bindable is ProductsListControl control)
+        {
+            if(oldValue != newValue)
+            {
+                //control.CartButtonStyles = new List<string> { "CartBtn", "SmallCartBtn" };
+                control.OnPropertyChanged(nameof(ProductsListControl.IsDefualt));
+            }
+        }
+    }
+    [RelayCommand]
 	private void AddToCart(int productId) => AddRemoveCartClicked?.Invoke(this, new ProductCartItemChangeEventArgs(productId, 1));
 
     [RelayCommand]

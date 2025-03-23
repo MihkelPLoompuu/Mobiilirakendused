@@ -33,8 +33,13 @@ namespace ViewModels
         [ObservableProperty, NotifyPropertyChangedFor(nameof(PageTitle))]
         private Category _selectedCategory;
         public string PageTitle => $"{SelectedCategory?.Name ?? "Category"} Products";
-        public ObservableCollection<Category> Categories { get; set; } = new();
-        public ObservableCollection<ProductDto> Products { get; set; } = new();
+
+        [ObservableProperty]
+        public IEnumerable<Category> _categories = Enumerable.Empty<Category>();
+        //public ObservableCollection<Category> Categories { get; set; } = new();
+        [ObservableProperty]
+        public IEnumerable<ProductDto> _product = Enumerable.Empty<ProductDto>();
+       //public ObservableCollection<ProductDto> Products { get; set; } = new();
 
         [ObservableProperty]
         private bool _isBusy = true;
@@ -43,18 +48,24 @@ namespace ViewModels
         public async Task InitializeAsync()
         {
             IsBusy = true;
+            await Task.Delay(100);
             try
             {
-                Categories.Clear();
-                foreach (var category in await _categoryService.GetSubOrSiblingCategories(SelectedCategory.Id))
-                {
-                    Categories.Add(category);
-                }
-                Products.Clear();
-                foreach (var product in await _productsService.GetCategoryProductsAsync(SelectedCategory.Id))
-                {
-                    Products.Add(product);
-                }
+                //Categories.Clear();               
+                //foreach (var category in await _categoryService.GetSubOrSiblingCategories(SelectedCategory.Id))
+                //{
+                //    Categories.Add(category);
+                //}
+                //Products.Clear();
+                //foreach (var product in await _productsService.GetCategoryProductsAsync(SelectedCategory.Id))
+                //{
+                //    Products.Add(product);
+                //}
+                var categoriesTask = _categoryService.GetSubOrSiblingCategories(SelectedCategory.Id);
+
+                var products = await _productsService.GetCategoryProductsAsync(SelectedCategory.Id);
+                Categories = await categoriesTask;
+                Product = products;
             }
             finally
             {
@@ -63,7 +74,7 @@ namespace ViewModels
         }
         private void ModifyProductQuantity(int id, int quantity)
         {
-            var product = Products.FirstOrDefault(p => p.Id == id);
+            var product = Product.FirstOrDefault(p => p.Id == id);
             if (product != null)
             {
                 product.CartQuanity = quantity;
@@ -92,7 +103,7 @@ namespace ViewModels
         private void RemoveFromCart(int productId) => UpdateCart(productId, -1);
         private void UpdateCart(int productId, int count)
         {
-            var product = Products.FirstOrDefault(P => P.Id == productId);
+            var product = Product.FirstOrDefault(P => P.Id == productId);
             if (product != null)
             {
                 product.CartQuanity += count;
