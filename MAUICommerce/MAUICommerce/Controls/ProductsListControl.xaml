@@ -65,7 +65,9 @@
                             <Button Grid.Column="1"
                                 Text="Add"
                                 Style="{StaticResource AddToCartBtn}"
-                                IsVisible="False">
+                                IsVisible="False"
+                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type controls:ProductsListControl}}, Path=AddToCartCommand}"
+                                CommandParameter ="{Binding Id}"/> >
                                 <Button.Triggers>
                                     <DataTrigger TargetType="Button"
                                              Binding="{Binding CartQuantity}"
@@ -91,15 +93,19 @@
 
                                 <Grid ColumnDefinitions="Auto, *, Auto">
                                     <Button Grid.Column="0"
-                                Text="-"
-                                Style="{StaticResource CartBtn}"/>
+                                                Text="-"
+                                                Style="{StaticResource CartBtn}"
+                                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type controls:ProductsListControl}}, Path=RemoveFromCartCommand}"
+                                            CommandParameter ="{Binding Id}"/>  
                                     <Label Grid.Column="1" 
                                    Text="{Binding CartQuantity}"
                                        VerticalOptions="Center"
                                        HorizontalOptions="Center"/>
                                     <Button Grid.Column="2"
                                 Text="+"
-                                    Style="{StaticResource CartBtn}"/>
+                                    Style="{StaticResource CartBtn}"
+                                                Command="{Binding Source={x:RelativeSource AncestorType={x:Type controls:ProductsListControl}}, Path=AddToCartCommand}"
+                                                CommandParameter ="{Binding Id}"/> />
                                 </Grid>
                             </Border>
                         </Grid>

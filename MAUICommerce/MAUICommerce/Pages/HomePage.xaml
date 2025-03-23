@@ -172,7 +172,8 @@
                 <Label Text="Popular"
                 Style="{StaticResource H2}"/>
 
-                <controls:ProductsListControl Products="{Binding PopularProducts}"/>
+                <controls:ProductsListControl Products="{Binding PopularProducts}"
+                                              AddRemoveCartClicked="ProductsListControl_AddRemoveCartClicked"/>
 
             </VerticalStackLayout>
             <Grid IsVisible="{Binding IsBusy}">
