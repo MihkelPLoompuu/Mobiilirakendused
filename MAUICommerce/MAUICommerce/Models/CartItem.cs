@@ -2,7 +2,7 @@
 
 namespace Models
 {
-    public partial class CartItem: ObservableObject
+    public partial class CartItem : ObservableObject
     {
         public Guid Id { get; set; }
         public int ProductId { get; set; }

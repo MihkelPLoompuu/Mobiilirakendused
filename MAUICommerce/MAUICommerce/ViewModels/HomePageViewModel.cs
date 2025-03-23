@@ -15,18 +15,23 @@ namespace ViewModels
         private readonly CategoryService _categoryService;
         private readonly OffersServices _offersServices;
         private readonly ProductsServices _productsServices;
-        public HomePageViewModel(CategoryService categoryService, OffersServices offersServices,ProductsServices productsServices)
+        private readonly CartViewModel _cartViewModel;
+        public HomePageViewModel(CategoryService categoryService, OffersServices offersServices,ProductsServices productsServices, CartViewModel cartViewModel)
         {
             _categoryService = categoryService;
             _offersServices = offersServices;
             _productsServices = productsServices;
+            _cartViewModel = cartViewModel;
         }
         public ObservableCollection<Category> Categories { get; set; } = new();
         public ObservableCollection<Offer> Offers { get; set; } = new();
         public ObservableCollection<ProductDto> PopularProducts { get; set; } = new();
 
         [ObservableProperty]
-        private bool _isBusy;
+        private bool _isBusy = true;
+
+        [ObservableProperty]
+        private int _cartCount;
         public async void InitializeAsync()
         {
             try
@@ -61,7 +66,17 @@ namespace ViewModels
             var product = PopularProducts.FirstOrDefault(p => p.Id == productId);
             if (product is not null)
             {
-                product.CartQuanity = count;
+                product.CartQuanity += count;
+
+                if(count == -1)
+                {
+                    _cartViewModel.RemoveFromCartCommand.Execute(product.Id);
+                }
+                else
+                {
+                    _cartViewModel.AddToCartCommand.Execute(product);
+                }
+                CartCount = _cartViewModel.Count;
             }
         }
     }
