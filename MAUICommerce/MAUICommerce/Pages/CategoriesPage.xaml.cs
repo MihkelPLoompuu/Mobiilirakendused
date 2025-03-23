@@ -4,12 +4,12 @@ using System.Collections.ObjectModel;
 
 namespace Pages;
 
-public partial class Categories : ContentPage
+public partial class CategoriesPage : ContentPage
 {
     private readonly CategoryService _categoryService;
-    public Categories (CategoryService categoryService)
+    public CategoriesPage(CategoryService categoryService)
 	{
-		InitializeComponent();
+        InitializeComponent();
         _categoryService = categoryService;
         BindingContext = this;
     }
@@ -23,6 +23,14 @@ public partial class Categories : ContentPage
         foreach(var categories in await _categoryService.GetCategoriesAsync())
         {
             Categories.Add(categories);
+        }
+    }
+
+    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection?[0] is Category categories)
+        {
+            await Shell.Current.GoToAsync(nameof(CategoryProductsPage));
         }
     }
 }

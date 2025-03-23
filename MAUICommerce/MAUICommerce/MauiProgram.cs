@@ -53,6 +53,10 @@ namespace MAUICommerce
             builder.Services.AddSingleton<CartViewModel>();
             builder.Services.AddTransient<CartPage>();
 
+            builder.Services.AddTransient<CategoriesPage>();
+
+            builder.Services.AddTransientWithShellRoute<CategoryProductsPage, CategoryProductsViewModel>(nameof(CategoryProductsPage));
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

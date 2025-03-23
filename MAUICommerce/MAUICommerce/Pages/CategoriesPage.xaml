@@ -3,14 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:MAUICommerce.Pages"
              xmlns:models="crl-namespace:MAUICommerce.Models"
-             x:Class="Pages.Categories"
+             x:Class="Pages.CategoriesPage"
              Title="Categories"
              x:DataType="pages:CategoriesPage">
     <ScrollView>
         <CollectionView ItemsSource="{Binding Categories}"
-                        ItemsLayout="VerticalGrid, 3">
+                        ItemsLayout="VerticalGrid, 3"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged">
             <CollectionView..ItemTemplate>
-                <DataTemplate x:DataType="MAUICommerce:models:Category"
+                <DataTemplate x:DataType="MAUICommerce:models:Category">
+                    <Border BackgroundColor="{StaticResource Primary}"
+                            StrokeShape="RoundRectangle 5"
+                            Margin="5">
+                        <Grid RowDefinitions="*, 40">
+                            <Image Grid.Row="0"
+                                   Source="{Binding Image}"
+                                   Aspect="AspectFill"/>
+                            <Label Grid.Row="1"
+                                      Text="{Binding Name}"
+                                      HorizontalOptions="Center"
+                                      VerticalOptions="Center"
+                                      LineBreakMode="WordWrap"
+                                      HorizontalTextAlignment="Center"
+                                      TextColor="White"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
             </CollectionView..ItemTemplate>
         </CollectionView>
     </ScrollView>
