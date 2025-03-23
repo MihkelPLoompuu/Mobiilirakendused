@@ -7,9 +7,9 @@
              xmlns:models="crl-namespace:Models"  
              xmlns:controls="clr-namespace:Controls;assembly=MAUICommerce"           
              xmlns:converters="clr-namespace:Converter"
-             Title="HomePage"
              xmlns:dto="clr-namespace:MAUICommerce.Shared.Dtos;assembly=MAUICommerce.Shared"
-             x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel">
+             x:DataType="vm:MAUICommerce:ViewModels.HomePageViewModel"
+             Title="HomePage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -136,6 +136,10 @@
                         <DataTemplate x:DataType="MAUICommerce:models:Category">
                             <Border StrokeShape="RoundRectangle 5"
                             StrokeThickness="0">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:HomePageViewModel}}, Path=GoToCategoryProductsPageCommand}"
+                                                              CommandParameter="{Binding .}"/>
+                                    </Border.GestureRecognizers>
                                 <Grid>
                                     <Image 
                                    Aspect="AspectFill"

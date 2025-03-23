@@ -59,6 +59,16 @@ namespace MAUICommerce.Api
                 return TypedResults.Ok(randomProduct);
             });
 
+            app.MapGet("/categories/{categoryId}/product", async (DataContext context, short categoryId) =>
+            {
+                var categoryProducts = await context.Products
+                    .Include(p => p.Category)
+                    .AsNoTracking()
+                    .Where(p => p.CategoryId == categoryId || p.Category.ParentId == categoryId)
+                    .Select(Product.DtoSelector)
+                    .ToArrayAsync();
+                return TypedResults.Ok(categoryProducts);
+            });
             app.Run("https://localhost:12345");
         }
     }

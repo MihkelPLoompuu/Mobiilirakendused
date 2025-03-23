@@ -35,5 +35,14 @@ namespace Services
         public async ValueTask<IEnumerable<Category>> GetMainCategoriesAsync() =>
             (await GetCategoriesAsync())
             .Where(c => c.ParentId == 0);
+        public async Task<IEnumerable<Category>> GetSubOrSiblingCategories(short mainOrSiblingCategoryId)
+        {
+            var allCategories = await GetCategoriesAsync();
+            var thisCategory = allCategories.First(x => x.Id == mainOrSiblingCategoryId);
+
+            var mainCategoryId = thisCategory.IsMainCategory ? mainOrSiblingCategoryId : thisCategory.ParentId;
+            return allCategories.Where(x => x.ParentId == mainCategoryId)
+                .ToList();
+        }
     }
 }

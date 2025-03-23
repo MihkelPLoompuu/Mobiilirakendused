@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using MAUICommerce.Shared.Dtos;
 using Models;
+using Pages;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,15 @@ namespace ViewModels
         private void AddToCart(int productId) => UpdaetCart(productId, 1);
         [RelayCommand]
         private void RemoveFromCart(int productId) => UpdaetCart(productId, -1);
+        [RelayCommand]
+        private async Task GoToCategoryProductsPage(Category category)
+        { 
+            var parameter = new Dictionary<string, object>
+            {
+                [nameof(CategoryProductsViewModel.SelectedCategory)] = category
+            };
+            await Shell.Current.GoToAsync(nameof(CategoryProductsPage), animate: true, parameter);
+        }
         private void UpdaetCart(int productId,int count)
         {
             var product = PopularProducts.FirstOrDefault(p => p.Id == productId);

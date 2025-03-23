@@ -1,6 +1,7 @@
 using Models;
 using Services;
 using System.Collections.ObjectModel;
+using ViewModels;
 
 namespace Pages;
 
@@ -30,7 +31,11 @@ public partial class CategoriesPage : ContentPage
     {
         if (e.CurrentSelection?[0] is Category categories)
         {
-            await Shell.Current.GoToAsync(nameof(CategoryProductsPage));
+            var parameter = new Dictionary<string, object>
+            {
+                [nameof(CategoryProductsViewModel.SelectedCategory)] = categories
+            };
+            await Shell.Current.GoToAsync(nameof(CategoryProductsPage), animate : true, parameter);
         }
     }
 }
