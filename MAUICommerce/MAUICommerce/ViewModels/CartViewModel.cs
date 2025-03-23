@@ -16,6 +16,22 @@ namespace ViewModels
         [ObservableProperty]
         private int _count;
 
+        [ObservableProperty]
+        private decimal _totalAmount;
+
+        private void RecalculateTotalAmount() => 
+            TotalAmount = CartItem.Sum(x => x.Amount);
+        [RelayCommand]
+        private void IncreaseCartItemQuantity(Guid cartItemId)
+        {
+            var item = CartItem.FirstOrDefault(x => x.Id == cartItemId);
+            if (item is not null)
+            {
+                item.Quantity++;
+                RecalculateTotalAmount();
+            }
+        }
+
         [RelayCommand]
         private void AddToCart(ProductDto product)
         {
@@ -37,6 +53,7 @@ namespace ViewModels
                 CartItem.Add(item);
                 Count = CartItem.Count;
             }
+            RecalculateTotalAmount();
         }
 
         [RelayCommand]
@@ -55,12 +72,14 @@ namespace ViewModels
                     item.Quantity--;
                 }
             }
+            RecalculateTotalAmount();
         }
 
         private void ClearCart()
         {
             CartItem.Clear();
             Count = 0;
+            RecalculateTotalAmount();
         }
     }
 }

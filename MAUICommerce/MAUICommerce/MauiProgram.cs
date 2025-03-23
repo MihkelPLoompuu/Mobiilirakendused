@@ -49,7 +49,9 @@ namespace MAUICommerce
             builder.Services.AddSingleton<HomePageViewModel>();
             builder.Services.AddSingleton<HomePage>();
             builder.Services.AddTransient<OffersServices>();
+
             builder.Services.AddSingleton<CartViewModel>();
+            builder.Services.AddTransient<CartPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
